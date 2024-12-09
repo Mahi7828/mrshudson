@@ -1,0 +1,1673 @@
+<sdf version="1.6">
+  <world name="frosty_world">
+  
+     <plugin name='ignition::gazebo::systems::TriggeredPublisher' filename='libignition-gazebo-triggered-publisher-system.so'>
+      <input type='ignition.msgs.Int32' topic='/keyboard/keypress'>
+        <match field='data'>16777235</match>
+      </input>
+      <output type='ignition.msgs.Twist' topic='/cmd_vel'>linear: {x: 0.5}, angular: {z: 0.0}</output>
+    </plugin>
+    <plugin name='ignition::gazebo::systems::TriggeredPublisher' filename='libignition-gazebo-triggered-publisher-system.so'>
+      <input type='ignition.msgs.Int32' topic='/keyboard/keypress'>
+        <match field='data'>16777237</match>
+      </input>
+      <output type='ignition.msgs.Twist' topic='/cmd_vel'>linear: {x: -0.5}, angular: {z: 0.0}</output>
+    </plugin>
+    <plugin name='ignition::gazebo::systems::TriggeredPublisher' filename='libignition-gazebo-triggered-publisher-system.so'>
+      <input type='ignition.msgs.Int32' topic='/keyboard/keypress'>
+        <match field='data'>16777236</match>
+      </input>
+      <output type='ignition.msgs.Twist' topic='/cmd_vel'>linear: {x: 0.0}, angular: {z: -0.5}</output>
+    </plugin>
+    <plugin name='ignition::gazebo::systems::TriggeredPublisher' filename='libignition-gazebo-triggered-publisher-system.so'>
+      <input type='ignition.msgs.Int32' topic='/keyboard/keypress'>
+        <match field='data'>16777234</match>
+      </input>
+      <output type='ignition.msgs.Twist' topic='/cmd_vel'>linear: {x: 0.0}, angular: {z: 0.5}</output>
+      
+    </plugin>  
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+      filename="libignition-gazebo-physics-system.so"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="libignition-gazebo-sensors-system.so"
+      name="ignition::gazebo::systems::Sensors">
+    </plugin>
+    <plugin
+      filename="libignition-gazebo-scene-broadcaster-system.so"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    
+    
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+     <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+    <model name='brick_box_3x1x3'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.052987 5.17248 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>1.97429 5.3752 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_0'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.92901 5.15651 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_0'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.93859 0.751288 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_0'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>3.69058 1.79033 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_1'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-4.54909 0.85511 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_1'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-4.73292 -0.33414 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_2'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.06916 2.8828 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_2'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.04968 2.75859 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_2'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4.04715 2.73244 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_3'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.9778 0.561885 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_3'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.000303 0.587771 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_3'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.07739 0.785897 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_4'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.25165 -1.53584 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_5'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.82746 -2.03967 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_5'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-1.89775 -1.40204 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_4'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>0.087698 -1.33569 0 0 -0 0</pose>
+    </model>
+    <model name='brick_box_3x1x3_6'>
+      <static>1</static>
+      <link name='chassis'>
+        <pose frame=''>0 0 1.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>2 0.5 2</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>2.11476 -1.49309 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_6'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4.06912 -1.50549 0 0 -0 0</pose>
+    </model>
+    <model name='cube_20k_5'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 0.25 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4.34789 -1.57726 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-2.03111 2.68586 0 0 -0 0</pose>
+    </model>
+    <model name='grey_wall'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 1.4 0 -0 0</pose>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>2 0.5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>4.07166 5.13085 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>2333 137000000</sim_time>
+      <real_time>1122 491947491</real_time>
+      <wall_time>1639172877 385443238</wall_time>
+      <iterations>1016449</iterations>
+      <model name='brick_box_3x1x3'>
+        <pose frame=''>0.052987 5.17248 -0.580675 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>0.052987 5.17248 0.919325 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_0'>
+        <pose frame=''>4.7747 3.94769 -0.613119 0 -0 1.57024</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>4.7747 3.94769 0.886881 0 -0 1.57024</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_1'>
+        <pose frame=''>-3.21371 2.43715 -0.52266 0 -0 1.57386</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>-3.21371 2.43715 0.97734 0 -0 1.57386</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_2'>
+        <pose frame=''>2.04968 2.75859 -0.495399 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>2.04968 2.75859 1.0046 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_3'>
+        <pose frame=''>-0.000303 0.587771 -0.639252 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>-0.000303 0.587771 0.860748 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_4'>
+        <pose frame=''>4.87951 1.62069 -0.492113 0 -0 1.57761</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>4.87951 1.62069 1.00789 0 -0 1.57761</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_5'>
+        <pose frame=''>-3.19022 -1.7134 -0.471606 0 -0 1.56522</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>-3.19022 -1.7134 1.02839 0 -0 1.56522</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='brick_box_3x1x3_6'>
+        <pose frame=''>2.11476 -1.49309 -0.528904 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='chassis'>
+          <pose frame=''>2.11476 -1.49309 0.971096 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k'>
+        <pose frame=''>2.05381 5.35125 0.5 -1e-06 1e-06 0.009011</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.05381 5.35125 1 -1e-06 1e-06 0.009011</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>3.12399 -0.259858 -0.345436 -2.87515 0.017719 3.1358</acceleration>
+          <wrench>3.12399 -0.259858 -0.345436 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_0'>
+        <pose frame=''>-3.21952 4.51746 0.5 -1e-06 1e-06 1.58504</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.21952 4.51746 1 -1e-06 1e-06 1.58504</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.423597 3.38486 0.12645 2.89904 0.420374 -0.009624</acceleration>
+          <wrench>0.423597 3.38486 0.12645 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_1'>
+        <pose frame=''>-3.23005 0.434918 0.5 -1e-06 -1e-06 1.56501</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3.23006 0.434918 1 -1e-06 -1e-06 1.56501</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.2491 -2.97968 0.519314 2.97954 0.24303 0.005229</acceleration>
+          <wrench>0.2491 -2.97968 0.519314 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_2'>
+        <pose frame=''>0.015985 2.86063 0.5 -1e-06 1e-06 0.018045</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.015985 2.86064 1 -1e-06 1e-06 0.018045</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>3.12182 -0.228752 -0.345786 -2.90591 0.019779 3.13641</acceleration>
+          <wrench>3.12182 -0.228752 -0.345786 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_3'>
+        <pose frame=''>2.06306 0.791933 0.5 -1e-06 -1e-06 0.011795</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.06306 0.791934 1 -1e-06 -1e-06 0.011795</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-2.97753 -0.302653 0.519814 -2.84498 -0.164251 -3.13457</acceleration>
+          <wrench>-2.97753 -0.302653 0.519814 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_4'>
+        <pose frame=''>0.109255 -1.3446 0.5 -1e-06 0 0.023089</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.109255 -1.3446 1 -1e-06 0 0.023089</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0.006334 0.00547 -0.007556 -0.007204 -0.0059 -0.002251</acceleration>
+          <wrench>-0.006334 0.00547 -0.007556 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cube_20k_5'>
+        <pose frame=''>4.18169 -1.61217 0.5 -1e-06 -1e-06 -0.0489</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.18169 -1.61217 1 -1e-06 -1e-06 -0.0489</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-3.03865 -0.139923 0.531635 -3.00733 -0.103453 -3.13583</acceleration>
+          <wrench>-3.03865 -0.139923 0.531635 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall'>
+        <pose frame=''>4.07166 5.13085 -0.509345 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.07166 5.13085 0.890655 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_0'>
+        <pose frame=''>-1.92901 5.15651 -0.40894 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.92901 5.15651 0.99106 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_1'>
+        <pose frame=''>-2.03111 2.68586 -0.433729 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.03111 2.68586 0.966271 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_2'>
+        <pose frame=''>4.04715 2.73244 -0.417079 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.04715 2.73244 0.982921 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_3'>
+        <pose frame=''>-1.9778 0.561885 -0.534898 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.9778 0.561885 0.865102 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_5'>
+        <pose frame=''>-1.89775 -1.40204 -0.435296 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.89775 -1.40204 0.964704 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='grey_wall_6'>
+        <pose frame=''>4.93898 -0.345816 -0.427707 0 -0 1.58188</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>4.93898 -0.345816 0.972293 0 -0 1.58188</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landing_station'>
+        <pose frame=''>-2.83546 1.596 1.08756 2.85765 -1.52748 0.296091</pose>
+        <scale>1 1 1</scale>
+        <link name='body'>
+          <pose frame=''>-2.83546 1.596 1.08756 2.85765 -1.52748 0.296091</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='landing_station_0'>
+        <pose frame=''>4.42312 3.88984 0.82259 2.91406 1.54458 -0.227604</pose>
+        <scale>1 1 1</scale>
+        <link name='body'>
+          <pose frame=''>4.42312 3.88984 0.82259 2.91406 1.54458 -0.227604</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>7.01028 -0.38052 26.8161 -9e-06 1.5658 1.54796</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='landing_station'>
+      <pose frame=''>-7.65698 -2.45125 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='body'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='landing_station_0'>
+      <pose frame=''>2.99418 -4.86902 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='body'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>    
+
+    <model name='mrs_hudson'>
+      <pose>0.992658 -0.677928 0.001139 -2e-06 -0.225697 1.54908</pose>
+      <link name='base_link'>
+        <pose>0 0 0.04 0 -0 0</pose>
+        <inertial>
+          <mass>3.6423399999999999</mass>
+          <inertia>
+            <ixx>0.018581199999999999</ixx>
+            <ixy>7.5795199999999997e-06</ixy>
+            <ixz>-4.0111200000000003e-05</ixz>
+            <iyy>0.018703399999999998</iyy>
+            <iyz>3.4509199999999999e-09</iyz>
+            <izz>0.0172725</izz>
+          </inertia>
+          <origin rpy='0 0 0' xyz='0 0 0.15487131491131'/>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.5 0 0.5 1</ambient>
+            <diffuse>0.5 0 0.5 1</diffuse>
+            <specular>0.5 0 0.5 0.5</specular>
+          </material>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </collision>
+        <enable_wind>false</enable_wind>
+       </link> 
+
+      <link name="lidar_link">
+        <pose>0 0 0.49 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000166667</ixx>
+            <iyy>0.000166667</iyy>
+            <izz>0.000166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.07 0.07 0.07</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.07 0.07 0.07</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='gpu_lidar' type='gpu_lidar'>
+        <pose>0 0 0 0 0 0</pose>
+          <topic>lidar</topic>
+          <update_rate>10</update_rate>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>640</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.396263</min_angle>
+                <max_angle>1.396263</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0.0</min_angle>
+                <max_angle>0.0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.08</min>
+              <max>10.0</max>
+              <resolution>0.01</resolution>
+            </range>
+          </lidar>
+          <alwaysOn>1</alwaysOn>
+          <visualize>true</visualize>
+        </sensor>
+      </link>
+     
+      <link name="camera_link">
+        <pose>0 0 0.57 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.000166667</ixx>
+            <iyy>0.000166667</iyy>
+            <izz>0.000166667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.07 0.07 0.07</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.07 0.07 0.07</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name="camera" type="camera">
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>camera</topic>
+        </sensor>
+      </link>   
+
+      <link name='left_wheel'>
+        <pose>0 0.0591 0.04 1.57089 -0.192087 3.14159</pose>
+        <inertial>
+          <mass>0.0072782699999999999</mass>
+          <inertia>
+            <ixx>2.8024699999999999e-06</ixx>
+            <ixy>-2.5770800000000002e-10</ixy>
+            <ixz>-4.5088299999999998e-21</ixz>
+            <iyy>2.8010899999999999e-06</iyy>
+            <iyz>-1.13354e-19</iyz>
+            <izz>4.9515500000000001e-06</izz>
+          </inertia>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0 0 0 1</specular>
+          </material>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+            </mesh>
+          </geometry>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='right_wheel'>
+        <pose>0 -0.0591 0.04 -1.5707 0.469429 0</pose>
+        <inertial>
+          <mass>0.0072782699999999999</mass>
+          <inertia>
+            <ixx>2.8024699999999999e-06</ixx>
+            <ixy>2.5770800000000002e-10</ixy>
+            <ixz>-8.1125200000000004e-22</ixz>
+            <iyy>2.8010899999999999e-06</iyy>
+            <iyz>6.6888400000000002e-21</iyz>
+            <izz>4.9515500000000001e-06</izz>
+          </inertia>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0 0 0 1</specular>
+          </material>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+            </mesh>
+          </geometry>
+          <origin rpy='0 0 0' xyz='0 0 0'/>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='left_wheel_joint' type='revolute'>
+        <pose>0 -0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>left_wheel</child>
+        <axis>
+          <xyz>0 9.6e-05 1</xyz>
+          <limit>
+            <lower>-1.7976900000000001e+308</lower>
+            <upper>1.7976900000000001e+308</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='right_wheel_joint' type='revolute'>
+        <pose>0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>right_wheel</child>
+        <axis>
+          <xyz>0 9.6e-05 1</xyz>
+          <limit>
+            <lower>-1.7976900000000001e+308</lower>
+            <upper>1.7976900000000001e+308</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      
+      <joint name='lidar_sensor_joint' type='fixed'>
+        <parent>base_link</parent>
+        <child>lidar_link</child>
+      </joint>
+      <joint name='camera_sensor_joint' type='fixed'>
+        <parent>base_link</parent>
+        <child>camera_link</child>
+      </joint>
+      <plugin
+        filename="libignition-gazebo-diff-drive-system.so"
+        name="ignition::gazebo::systems::DiffDrive">
+        <left_joint>left_wheel_joint</left_joint>
+        <right_joint>right_wheel_joint</right_joint>
+        <wheel_separation>0.1182</wheel_separation>
+        <wheel_radius>0.04</wheel_radius>
+        <odom_publish_frequency>1</odom_publish_frequency>
+        <topic>cmd_vel</topic>
+      </plugin>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>   
+  </world>
+</sdf>
