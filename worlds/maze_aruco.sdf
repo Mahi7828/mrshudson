@@ -139,14 +139,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -163,7 +163,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -184,7 +184,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -239,8 +239,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -257,7 +257,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -278,7 +278,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -327,14 +327,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -372,14 +372,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -396,7 +396,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -417,7 +417,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -445,7 +445,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -466,7 +466,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -515,14 +515,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -566,8 +566,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -611,8 +611,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -650,14 +650,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -674,7 +674,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -695,7 +695,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -744,14 +744,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -789,14 +789,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -840,8 +840,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -858,7 +858,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -879,7 +879,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -928,14 +928,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/meshes/simple_box.dae</uri>
               <scale>2 0.5 2</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/brick_box_3x1x3/materials/textures</uri>
               <name>BrickBox/Diffuse</name>
             </script>
           </material>
@@ -979,8 +979,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -997,7 +997,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -1018,7 +1018,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/cube_20k/meshes/cube_20k.stl</uri>
               <scale>1 0.25 1</scale>
             </mesh>
           </geometry>
@@ -1053,8 +1053,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -1078,8 +1078,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/scripts</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
           </material>
@@ -1363,7 +1363,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1379,7 +1379,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
+              <uri>file:///home/Downloads/aruco_detection/models/landing_station/meshes/marker.obj</uri>
             </mesh>
           </geometry>
         </visual>
@@ -1409,7 +1409,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1422,7 +1422,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
@@ -1545,7 +1545,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1558,7 +1558,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
@@ -1583,7 +1583,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -1596,7 +1596,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
