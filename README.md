@@ -2,7 +2,7 @@
 
  In the models and world folder, you will see the urdf and sdf files respectively. In both files, update the path of the meshes according to their locations in your system.
 
-For Sherlocks using docker as per our instructions, You all will have a same directory address given by "file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/".
+If you are using docker as per our instructions, You all will have a same directory address given by "file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/".
 So You don't need to change any path. To be safer, crosscheck the address of one of your stl files.
 
 For those using any other way of running linux or Any other folders as their workspace:
