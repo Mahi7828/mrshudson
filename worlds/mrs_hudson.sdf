@@ -132,7 +132,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -145,7 +145,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/base_link.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
@@ -268,7 +268,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -281,7 +281,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/left_wheel.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
@@ -306,7 +306,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -319,7 +319,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/saurabh42/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
+              <uri>file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/right_wheel.stl</uri>
             </mesh>
           </geometry>
           <origin rpy='0 0 0' xyz='0 0 0'/>
