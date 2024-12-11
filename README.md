@@ -1,5 +1,10 @@
 # mrshudson
 
+## Overview
+This is a package for the mrs_hudson bot. This repository hosts the essential URDF and launch files for mrs_hudson bot, designed specifically for this fROSty winter.
+
+## Installation 
+
  In the models and world folder, you will see the urdf and sdf files respectively. In both files, update the path of the meshes according to their locations in your system.
 
 If you are using docker as per our instructions, You all will have a same directory address given by "file:///home/ubuntu/erc_ws/src/mrs_hudson/meshes/".
